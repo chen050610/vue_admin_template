@@ -1,21 +1,12 @@
 <script setup lang="ts">
-const str = ' woaini'
-console.log(str)
+
 </script>
 
 <template>
-  <div class="box">
-    <h1>我是app</h1>
-  </div>
+  <h1>hahah</h1>
+  <svg-icon name="home"/>
 </template>
 
 <style scoped lang="scss">
-.box {
-  width: 600px;
-  height: 400px;
-  background-color: black;
-  h1 {
-    color: white;
-  }
-}
+
 </style>
