@@ -10,29 +10,28 @@ import 'virtual:svg-icons-register'
 //@ts-ignore
 import SvgIcon from '@/components/SvgIcon/index.vue'
 import '@/styles/index.scss'
+//注册路由
+import router from './router'
+//引入仓库
+import pinia from "./store";
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 const app = createApp(App)
 app.use(ElementPlus)
+app.use(pinia)
 app.component('SvgIcon', SvgIcon)
 app.use(ElementPlus, {
   locale: zhCn,
 })
+app.use(router)
 app.mount('#app')
+//注册图标的全局插件
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
 
 //引入自定义插件对象；注册整个项目的全局组件
 // import gloalComponent from '@/components'
 // app.use(gloalComponent)
 //
 // console.log(gloalComponent)
-
-//测试假的接口能不能使用
-import axios from 'axios'
-//登录接口
-axios({
-  url:'/api/user/login',
-  method:'post',
-  data:{
-    username:'admin',
-    password:'111111',
-  }
-})
