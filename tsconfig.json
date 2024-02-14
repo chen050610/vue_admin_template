@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "module": "ESNext",
+    "module": "esnext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
 
@@ -23,7 +23,8 @@
     //路径
     "compilerOptions": {
       "baseUrl": "./", // 解析非相对模块的基地址，默认是当前目录
-      "paths": { //路径映射，相对于baseUrl
+      "paths": {
+        //路径映射，相对于baseUrl
         "@/*": ["src/*"]
       }
     }
