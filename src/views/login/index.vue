@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { User, Lock } from '@element-plus/icons-vue'
 import { reactive, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter,useRoute } from 'vue-router'
 //引入仓具
 //@ts-ignore
 import useUserStore from '@/store/modules/user.ts'
@@ -9,6 +9,8 @@ import { ElMessage, ElNotification } from 'element-plus'
 import { gettime } from '../../../untils/time.ts'
 let userStore = useUserStore()
 let $router = useRouter()
+let $route = useRoute()
+
 let loginForms = ref()
 //定义变量控制加载效果
 let loading = ref(false)
@@ -16,6 +18,12 @@ let loading = ref(false)
 let loginForm = reactive({
   username: '',
   password: '',
+  createTime: "2024-02-16T08:47:25.855Z",
+  id: 0,
+  name: "string",
+  phone: "string",
+  roleName: "string",
+  updateTime: "2024-02-16T08:47:25.855Z",
 })
 //登录按钮的回调
 const login = async () => {
@@ -29,7 +37,9 @@ const login = async () => {
   try {
     await userStore.useLogin(loginForm)
     //编程式导航,跳转到首页
-    $router.push('/')
+    // 判断路径是否有参数
+    let redirect :any= $route.query.redirect
+    $router.push({path:redirect || '/'})
     //登录提示信息
     ElNotification({
       type: 'success',

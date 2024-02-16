@@ -1,13 +1,4 @@
 <script setup lang="ts">
-import {onMounted} from "vue";
-//@ts-ignore
-import useUserStore from "@/store/modules/user.ts";
-
-let userStore = useUserStore();
-onMounted(()=>{
-  //首页挂载完毕请求获取用户信息
-  userStore.userInfo()
-})
 
 </script>
 

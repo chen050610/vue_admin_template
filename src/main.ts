@@ -30,6 +30,9 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
 
+//引入路由鉴权
+import './permisstion.ts'
+
 //引入自定义插件对象；注册整个项目的全局组件
 // import gloalComponent from '@/components'
 // app.use(gloalComponent)

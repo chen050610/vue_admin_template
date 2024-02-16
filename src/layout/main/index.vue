@@ -1,18 +1,19 @@
 <script setup lang="ts">
 //@ts-ignore
-import {useLayOutSettingStore} from "@/store/setting.ts";
-import {watch,ref,nextTick} from "vue";
-const layoutStore = useLayOutSettingStore();
+import { useLayOutSettingStore } from '@/store/setting.ts'
+import { watch, ref, nextTick } from 'vue'
+const layoutStore = useLayOutSettingStore()
 let flag = ref(true)
-watch(()=>layoutStore.refsh,()=>{
-  //刷新就是销毁重建组件
-  flag.value = false;
-  nextTick(()=>{
-    flag.value = true;
-  })
-
-})
-
+watch(
+  () => layoutStore.refsh,
+  () => {
+    //刷新就是销毁重建组件
+    flag.value = false
+    nextTick(() => {
+      flag.value = true
+    })
+  },
+)
 </script>
 
 <template>
@@ -31,7 +32,7 @@ watch(()=>layoutStore.refsh,()=>{
   transform: scale(0);
 }
 .fade-enter-active {
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .fade-enter-to {
   opacity: 1;

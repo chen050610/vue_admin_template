@@ -78,7 +78,7 @@ export const constantRoute = [
     //@ts-ignore
     component: () => import('@/layout/index.vue'),
     name: 'Acl',
-    redirect:'/acl/user',
+    redirect: '/acl/user',
     meta: {
       title: '权限管理',
       hidden: false,
@@ -125,7 +125,7 @@ export const constantRoute = [
     //@ts-ignore
     component: () => import('@/layout/index.vue'),
     name: 'Product',
-    redirect:'/product/trademark',
+    redirect: '/product/trademark',
     meta: {
       title: '商品管理',
       hidden: false,

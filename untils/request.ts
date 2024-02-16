@@ -2,14 +2,10 @@
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 //
-import useUserStore from "../src/store/modules/user";
+import useUserStore from '../src/store/modules/user'
 //获取用户相关的小仓库；获取仓库里面额token，登陆成功以后携带给服务器
 
-
-
 ///第一步，利用axios对象的create的方法，去创建axios的实例
-
-
 
 let request = axios.create({
   //@ts-ignore
@@ -21,10 +17,9 @@ request.interceptors.request.use((config) => {
   //返回配置对象
   //携带公共的参数
   //config有一个headers的属性就是响应头，经常给服务器端携带公共参数
-  let userStore = useUserStore();
+  let userStore = useUserStore()
   if (userStore.token) {
-    config.headers.token=userStore.token   //在请求的时候，如果仓库里面有token的话，就会携带token在请求头
-
+    config.headers.token = userStore.token //在请求的时候，如果仓库里面有token的话，就会携带token在请求头
   }
   return config
 })
