@@ -2,7 +2,7 @@
 import {
   createRouter,
   createWebHashHistory,
-    //@ts-ignore
+  //@ts-ignore
 } from 'vue-router'
 import { constantRoute } from './routes.ts'
 

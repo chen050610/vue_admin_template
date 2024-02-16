@@ -13,7 +13,7 @@ import '@/styles/index.scss'
 //注册路由
 import router from './router'
 //引入仓库
-import pinia from "./store";
+import pinia from './store'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 const app = createApp(App)
